@@ -1,0 +1,9 @@
+.deletebtn {
+    font-size: larger;
+    cursor: pointer;
+}
+
+.posttag {
+    margin: 1px 3px 15px 3px;
+    font-size: 1rem;
+}
