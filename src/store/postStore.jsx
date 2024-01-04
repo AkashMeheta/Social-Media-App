@@ -4,7 +4,6 @@ export const PostList = createContext({
     postObj: [],
     addPost: () =>{},
     deletePost: () => {},
-    handelReaction:()=>{},
 });
 
 const reducerFunc = (currentPostList, action) => {
@@ -15,9 +14,6 @@ const reducerFunc = (currentPostList, action) => {
 
     }else if(action.type === "DELETE_POST"){
         newPostList = currentPostList.filter((post) => post.title !==action.payload.deltitle)
-        return newPostList;
-    }else if(action.type === "HANDEL_REACTION"){
-        console.log(liked);
         return newPostList;
     }
 }
@@ -34,7 +30,6 @@ const PostListProvider = ({ children }) => {
                 title: tempPost.title,
                 content: tempPost.content,
                 author: tempPost.author,
-                likes: tempPost.likes,
                 tags: tempPost.tags,
             },
            })
@@ -50,14 +45,6 @@ const PostListProvider = ({ children }) => {
 
     }
 
-    const handelReaction = (title) => {
-        dispatchPostList({
-            type: 'HANDEL_REACTION',
-            payload:{
-                handelTitle:title,
-            },
-        })
-    }
 
     return (
         <>
@@ -65,7 +52,6 @@ const PostListProvider = ({ children }) => {
                 postData,
                 addPost,
                 deletePost,
-                handelReaction,
             }}>{children}</PostList.Provider>
         </>
     )
@@ -76,7 +62,6 @@ const obj = [
       title: "First Post",
       content: "This is the content of the first post.",
       author: "John Doe",
-      likes: 2,
       tags: ['post', 'first'],
     },
     {
@@ -84,7 +69,6 @@ const obj = [
       title: "Second Post",
       content: "This is the content of the second post.",
       author: "Jane Smith",
-      likes: 5,
       tags: ['post', 'first'],
     },
     

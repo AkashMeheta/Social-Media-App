@@ -7,7 +7,6 @@ const CreatePost = () => {
   const name = useRef();
   const title = useRef();
   const description = useRef();
-  const likes = useRef();
   const tags = useRef();
 
   const postDataArr =  useContext(PostList);
@@ -20,10 +19,13 @@ const CreatePost = () => {
       title: title.current.value,
       content: description.current.value,
       author: name.current.value,
-      likes: likes.current.value,
       tags: tags.current.value.split(" "),
     }
     addPost(temp);
+    title.current.value="";
+    description.current.value="";
+    name.current.value="";
+    tags.current.value="";
   }
 
   return (
@@ -39,6 +41,7 @@ const CreatePost = () => {
           className="form-control"
           id="examplehtmlFormControlInput1"
           placeholder="Enter Your user Name"
+          autoComplete="off"
         />
       </div>
 
@@ -66,19 +69,6 @@ const CreatePost = () => {
           placeholder="Explain it little more..."
           rows="5"
         ></textarea>
-      </div>
-  
-      <div className="mb-3">
-        <label htmlFor="examplehtmlFormControlTextarea1" className="form-label">
-          Likes
-        </label>
-        <input
-          type="text"
-          ref={likes}
-          className="form-control"
-          id="examplehtmlFormControlTextarea1"
-          placeholder="how many reaction you got..."
-        ></input>
       </div>
 
       <div className="mb-3">
