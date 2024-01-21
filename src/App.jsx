@@ -5,10 +5,7 @@ import style from "./css/App.module.css";
 import Header from './components/header';
 import Sidebar from './components/sidebar';
 import Footer from './components/footer';
-import AddPost from "./components/addPost";
-import CreatePost from "./components/createPost";
 import { useState } from "react";
-import Profile from "./components/profile";
 import Display from "./components/display";
 import PostListProvider from "./store/postStore";
 

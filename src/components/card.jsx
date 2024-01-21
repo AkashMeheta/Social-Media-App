@@ -23,7 +23,6 @@ const Card = ({ cardDel }) => {
     <>
       <div className="card" style={{ width: "18rem", margin: "30px" }}>
         <div className="card-body">
-          
           <h3 className="card-title">{cardDel.title}</h3><span onClick={() => deleteFunction(cardDel.title)} className={`position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger  ${style.deletebtn}`}>
             <MdAutoDelete /></span>
           <h5 className="card-text">{cardDel.content}</h5>
