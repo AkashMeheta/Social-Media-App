@@ -8,7 +8,7 @@ const Sidebar = ({ displayComponent, setDisplayComponent }) => {
     <>
       <div
         className="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
-        style={{width: "280px", height: "700px"}}
+        style={{width: "280px", height: "100vh"}}
       >
         <a
           href="/"
@@ -17,7 +17,7 @@ const Sidebar = ({ displayComponent, setDisplayComponent }) => {
           <svg className="bi pe-none me-2" width="40" height="32">
             <use xlinkHref="#bootstrap"></use>
           </svg>
-          <span className="fs-4">Sidebar</span>
+          <span className="fs-4">SocialSphere</span>
         </a>
         <hr />
         <ul className="nav nav-pills flex-column mb-auto" >
