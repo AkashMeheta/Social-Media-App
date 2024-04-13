@@ -3,11 +3,15 @@ import { GiSelfLove } from "react-icons/gi";
 import style from "../css/cards.module.css";
 
 import { PostList } from "../store/postStore.jsx";
-import { useContext,  useState } from "react";
+import { useContext,  useEffect,  useState } from "react";
 
 const Card = ({ cardDel }) => {
 
-  const postDataArr =  useContext(PostList);
+
+  useEffect(()=>{
+      console.log(cardDel.img);
+  }, []);
+  const postDataArr =  useContext(PostList);  
   const deleteFunction = postDataArr.deletePost;
  
   const [ likeValue, setLikeValue ] = useState(0);
@@ -23,6 +27,8 @@ const Card = ({ cardDel }) => {
     <>
       <div className="card" style={{ width: "18rem", margin: "30px" }}>
         <div className="card-body">
+          <div><img className={` ${style.image} `} src={cardDel.img} alt="" /></div>
+          
           <h3 className="card-title">{cardDel.title}</h3><span onClick={() => deleteFunction(cardDel.title)} className={`position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger  ${style.deletebtn}`}>
             <MdAutoDelete /></span>
           <h5 className="card-text">{cardDel.content}</h5>

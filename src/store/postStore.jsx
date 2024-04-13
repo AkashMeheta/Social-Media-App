@@ -31,6 +31,7 @@ const PostListProvider = ({ children }) => {
                 content: tempPost.content,
                 author: tempPost.author,
                 tags: tempPost.tags,
+                img: tempPost.img,
             },
            })
     }
@@ -63,6 +64,7 @@ const obj = [
       content: "This is the content of the first post.",
       author: "John Doe",
       tags: ['post', 'first'],
+      img: "src/assets/react.svg",
     },
     {
       id: 2,
@@ -71,7 +73,6 @@ const obj = [
       author: "Jane Smith",
       tags: ['post', 'first'],
     },
-    
 ];
 
 export default PostListProvider;
